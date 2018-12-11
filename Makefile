@@ -22,7 +22,7 @@ LINUX     := "Linux"
 MAC       := "Darwin"
 PACKAGE_LIST  := go list ./...
 PACKAGES  := $$($(PACKAGE_LIST))
-PACKAGE_DIRECTORIES := $(PACKAGE_LIST) 
+PACKAGE_DIRECTORIES := $(PACKAGE_LIST) | sed 's|$(PROJECT)/||'
 FILES     := $$(find $$($(PACKAGE_DIRECTORIES)) -name "*.go")
 
 GOFAIL_ENABLE  := $$(find $$PWD/ -type d | grep -vE "(\.git|_tools)" | xargs gofail enable)
@@ -48,14 +48,14 @@ buildsucc:
 all: build
 
 build:
-	$(GOBUILD)  -ldflags '$(LDFLAGS)' ${PROJECT}.go
+	$(GOBUILD)  -ldflags '$(LDFLAGS)' -o server/${PROJECT} server/${PROJECT}.go
 
 # The retool tools.json is setup from hack/retool-install.sh
 check-setup:
 	@which retool >/dev/null 2>&1 || go get github.com/twitchtv/retool
 	@GO111MODULE=off retool sync
 
-check: check-setup fmt lint
+check: check-setup fmt #lint
 
 # These need to be fixed before they can be ran regularly
 check-fail: goword check-static check-slow
