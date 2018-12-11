@@ -1,0 +1,20 @@
+#ekvrepreceiver config file
+title = "ekvrepreceiver's config file"
+
+host= "10.101.67.179"
+port= 8000
+psaddr= "10.101.67.179:9001,10.101.67.179:9002,10.101.67.179:9003"
+prometheus_port= 8080
+
+[Log]
+disable-timestamp= false
+expensive-threshold = 10000
+level= "info"
+format= "text"
+
+[log.file]
+filename = "test.log"
+log-rotate = true
+max-backups = 0
+max-days = 0
+max-size = 300

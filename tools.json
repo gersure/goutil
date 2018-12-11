@@ -1,0 +1,14 @@
+{
+  "Tools": [
+    {
+      "Repository": "gopkg.in/alecthomas/gometalinter.v2",
+      "Commit": "46cc1ea3778b247666c2949669a3333c532fa9c6"
+    },
+    {
+      "Repository": "github.com/chzchzchz/goword",
+      "Commit": "a9744cb52b033fe5c269df48eeef2c954526cd79"
+    }
+  ],
+  "RetoolVersion": "1.3.7"
+}
+
