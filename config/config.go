@@ -7,7 +7,7 @@ import (
 )
 
 type Config struct {
-	Host        string   `toml;"host" json:"host"`
+	Host        string   `toml:"host" json:"host"`
 	Port       	uint  	 `toml:"port" json:"port"`
 	Psaddr  	string 	 `toml:"psaddr" json:"psaddr"`
 	PrometheusPort uint  `toml:"prometheus_port" json:"prometheus_port"`
