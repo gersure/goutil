@@ -1,6 +1,5 @@
 package future
 
-
 import (
 	"errors"
 	"testing"

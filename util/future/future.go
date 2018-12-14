@@ -1,13 +1,10 @@
 package future
 
-
-
 import (
 	"time"
 
 	"golang.org/x/net/context"
 )
-
 
 type Value interface{}
 

@@ -85,4 +85,3 @@ func Caller(skip int) *Record {
 		Line: line,
 	}
 }
-

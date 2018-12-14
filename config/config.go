@@ -1,19 +1,18 @@
 package config
 
 import (
+	"github.com/BurntSushi/toml"
 	"github.com/zhengcf/goutil/util/errors"
 	"github.com/zhengcf/goutil/util/logutil"
-	"github.com/BurntSushi/toml"
 )
 
 type Config struct {
-	Host        string   `toml:"host" json:"host"`
-	Port       	uint  	 `toml:"port" json:"port"`
-	Psaddr  	string 	 `toml:"psaddr" json:"psaddr"`
-	PrometheusPort uint  `toml:"prometheus_port" json:"prometheus_port"`
-	Log         Log      `toml:"Log" json:"log"`
+	Host           string `toml:"host" json:"host"`
+	Port           uint   `toml:"port" json:"port"`
+	Psaddr         string `toml:"psaddr" json:"psaddr"`
+	PrometheusPort uint   `toml:"prometheus_port" json:"prometheus_port"`
+	Log            Log    `toml:"Log" json:"log"`
 }
-
 
 // Log is the log section of config.
 type Log struct {
@@ -33,10 +32,10 @@ type Log struct {
 }
 
 var defaultConf = Config{
-	Host:      "0.0.0.0",
-	Port:      8000,
-	Psaddr:    "",
-	PrometheusPort:  8080,
+	Host:           "0.0.0.0",
+	Port:           8000,
+	Psaddr:         "",
+	PrometheusPort: 8080,
 	Log: Log{
 		Level:  "debug",
 		Format: "text",
@@ -61,7 +60,7 @@ func GetGlobalConfig() *Config {
 	return &globalConf
 }
 
-func(c *Config) Load(confFile string) error {
+func (c *Config) Load(confFile string) error {
 	_, err := toml.DecodeFile(confFile, c)
 	return errors.Trace(err)
 }

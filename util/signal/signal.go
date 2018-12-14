@@ -1,14 +1,13 @@
 package signal
 
 import (
-"os"
-"os/signal"
-"runtime"
-"syscall"
+	"os"
+	"os/signal"
+	"runtime"
+	"syscall"
 
-log "github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 )
-
 
 func SetupSignalHandler(shudownFunc func(bool)) {
 	usrDefSignalChan := make(chan os.Signal, 1)

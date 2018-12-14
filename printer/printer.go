@@ -2,22 +2,22 @@ package printer
 
 import (
 	"bytes"
-	"fmt"
 	"encoding/json"
+	"fmt"
 
-	"github.com/zhengcf/goutil/config"
 	log "github.com/sirupsen/logrus"
+	"github.com/zhengcf/goutil/config"
 )
 
 // Version information.
 var (
-	AppName      = "Node"
+	AppName = "Node"
 
 	AppReleaseVersion = "None"
-	AppBuildTS   = "None"
-	AppGitHash   = "None"
-	AppGitBranch = "None"
-	GoVersion     = "None"
+	AppBuildTS        = "None"
+	AppGitHash        = "None"
+	AppGitBranch      = "None"
+	GoVersion         = "None"
 )
 
 // PrintTiDBInfo prints the TiDB version information.

@@ -1,6 +1,5 @@
 package logutil
 
-
 import (
 	"bytes"
 	"fmt"

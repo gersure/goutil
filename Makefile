@@ -22,8 +22,9 @@ LINUX     := "Linux"
 MAC       := "Darwin"
 PACKAGE_LIST  := go list ./...
 PACKAGES  := $$($(PACKAGE_LIST))
-PACKAGE_DIRECTORIES := $(PACKAGE_LIST) | sed 's|$(PROJECT)/||'
+PACKAGE_DIRECTORIES := $(PACKAGE_LIST) | sed 's|$(PROJECT)/||' | sed 's|$(PROJECT)||'
 FILES     := $$(find $$($(PACKAGE_DIRECTORIES)) -name "*.go")
+
 
 GOFAIL_ENABLE  := $$(find $$PWD/ -type d | grep -vE "(\.git|_tools)" | xargs gofail enable)
 GOFAIL_DISABLE := $$(find $$PWD/ -type d | grep -vE "(\.git|_tools)" | xargs gofail disable)

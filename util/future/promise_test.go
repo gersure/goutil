@@ -1,6 +1,5 @@
 package future
 
-
 import (
 	"errors"
 	"testing"
@@ -86,4 +85,3 @@ func TestPromiseChainDelay(t *testing.T) {
 
 	assert.InDelta(t, 0.2, time.Since(start).Seconds(), 0.05)
 }
-

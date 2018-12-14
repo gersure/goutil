@@ -1,6 +1,5 @@
 package errors
 
-
 import (
 	"errors"
 	"fmt"
@@ -95,4 +94,3 @@ func Equal(err1, err2 error) bool {
 func NotEqual(err1, err2 error) bool {
 	return !Equal(err1, err2)
 }
-
